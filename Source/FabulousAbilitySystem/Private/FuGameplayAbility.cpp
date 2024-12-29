@@ -12,9 +12,6 @@ UFuGameplayAbility::UFuGameplayAbility()
 
 	// https://github.com/tranek/GASDocumentation#concepts-ga-definition-remotecancel
 	bServerRespectsRemoteAbilityCancellation = false;
-
-	static const auto CheckCostBlueprintFunctionName{GET_FUNCTION_NAME_CHECKED(ThisClass, CheckCostBlueprint)};
-	bCheckCostBlueprintImplemented = GetClass()->IsFunctionImplementedInScript(CheckCostBlueprintFunctionName);
 }
 
 void UFuGameplayAbility::SetShouldBlockOtherAbilities(const bool bShouldBlockAbilities)
@@ -40,36 +37,6 @@ void UFuGameplayAbility::SetShouldBlockOtherAbilities(const bool bShouldBlockAbi
 	{
 		FuAbilitySystem->UnBlockAbilitiesWithoutAllTags(BlockAbilitiesWithoutAllTags);
 	}
-}
-
-bool UFuGameplayAbility::CheckCost(const FGameplayAbilitySpecHandle AbilityHandle,
-                                   const FGameplayAbilityActorInfo* ActorInfo, FGameplayTagContainer* FailureTags) const
-{
-	if (!Super::CheckCost(AbilityHandle, ActorInfo, FailureTags))
-	{
-		return false;
-	}
-
-	if (bCheckCostBlueprintImplemented && !CheckCostBlueprint(*ActorInfo, AbilityHandle))
-	{
-		const auto& CostFailureTag{UAbilitySystemGlobals::Get().ActivateFailCostTag};
-		if (FailureTags != nullptr && CostFailureTag.IsValid())
-		{
-			FailureTags->AddTag(CostFailureTag);
-		}
-
-		return false;
-	}
-
-	return true;
-}
-
-void UFuGameplayAbility::ApplyCost(const FGameplayAbilitySpecHandle AbilityHandle, const FGameplayAbilityActorInfo* ActorInfo,
-                                   const FGameplayAbilityActivationInfo ActivationInfo) const
-{
-	Super::ApplyCost(AbilityHandle, ActorInfo, ActivationInfo);
-
-	ApplyCostBlueprint(*ActorInfo, AbilityHandle, ActivationInfo);
 }
 
 void UFuGameplayAbility::OnAvatarSet(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& AbilitySpecification)
