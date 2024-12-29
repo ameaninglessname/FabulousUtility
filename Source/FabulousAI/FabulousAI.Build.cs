@@ -5,7 +5,6 @@ public class FabulousAI : ModuleRules
 	public FabulousAI(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_5;
 
 		bEnableNonInlinedGenCppWarnings = true;
 		// UnsafeTypeCastWarningLevel = WarningLevel.Warning;
