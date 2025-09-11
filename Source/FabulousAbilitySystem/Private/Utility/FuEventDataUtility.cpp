@@ -8,7 +8,7 @@
 FGameplayEventData UFuEventDataUtility::MakeEventDataFromEffectModificationData(const FGameplayEffectModCallbackData& Data)
 {
 	FGameplayEventData EventData;
-
+/*
 	EventData.ContextHandle = Data.EffectSpec.GetContext();
 
 	EventData.Instigator = EventData.ContextHandle.GetOriginalInstigator();
@@ -21,7 +21,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromEffectModificationData(
 
 	EventData.Target = Data.Target.GetOwnerActor();
 	Data.Target.GetOwnedGameplayTags(EventData.TargetTags);
-
+*/
 	return EventData;
 }
 
@@ -29,7 +29,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAbilitySystems(const UA
                                                                         const UAbilitySystemComponent* TargetAbilitySystem)
 {
 	FGameplayEventData EventData;
-
+/*
 	if (IsValid(InstigatorAbilitySystem))
 	{
 		EventData.ContextHandle = InstigatorAbilitySystem->MakeEffectContext();
@@ -43,7 +43,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAbilitySystems(const UA
 		EventData.Target = TargetAbilitySystem->GetOwnerActor();
 		TargetAbilitySystem->GetOwnedGameplayTags(EventData.TargetTags);
 	}
-
+*/
 	return EventData;
 }
 
@@ -51,7 +51,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAbilitySystemAndAvatar(
                                                                                 const AActor* TargetAvatar)
 {
 	FGameplayEventData EventData;
-
+/*
 	if (IsValid(InstigatorAbilitySystem))
 	{
 		EventData.ContextHandle = InstigatorAbilitySystem->MakeEffectContext();
@@ -70,7 +70,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAbilitySystemAndAvatar(
 	{
 		EventData.Target = TargetAvatar;
 	}
-
+*/
 	return EventData;
 }
 
@@ -78,7 +78,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAvatarAndAbilitySystem(
                                                                                 const UAbilitySystemComponent* TargetAbilitySystem)
 {
 	FGameplayEventData EventData;
-
+/*
 	UAbilitySystemComponent* InstigatorAbilitySystem;
 	if (UFuAbilitySystemUtility::TryGetAbilitySystem(InstigatorAvatar, InstigatorAbilitySystem))
 	{
@@ -97,7 +97,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAvatarAndAbilitySystem(
 		EventData.Target = TargetAbilitySystem->GetOwnerActor();
 		TargetAbilitySystem->GetOwnedGameplayTags(EventData.TargetTags);
 	}
-
+*/
 	return EventData;
 }
 
@@ -105,7 +105,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromActorInfos(const FGamep
                                                                     const FGameplayAbilityActorInfo& TargetActorInfo)
 {
 	FGameplayEventData EventData;
-
+/*
 	if (InstigatorActorInfo.AbilitySystemComponent.IsValid())
 	{
 		EventData.ContextHandle = InstigatorActorInfo.AbilitySystemComponent->MakeEffectContext();
@@ -119,7 +119,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromActorInfos(const FGamep
 		EventData.Target = TargetActorInfo.OwnerActor.Get();
 		TargetActorInfo.AbilitySystemComponent->GetOwnedGameplayTags(EventData.TargetTags);
 	}
-
+*/
 	return EventData;
 }
 
@@ -127,7 +127,7 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromActorInfoAndAvatar(cons
                                                                             const AActor* TargetAvatar)
 {
 	FGameplayEventData EventData;
-
+/*
 	if (InstigatorActorInfo.AbilitySystemComponent.IsValid())
 	{
 		EventData.ContextHandle = InstigatorActorInfo.AbilitySystemComponent->MakeEffectContext();
@@ -146,14 +146,14 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromActorInfoAndAvatar(cons
 	{
 		EventData.Target = TargetAvatar;
 	}
-
+*/
 	return EventData;
 }
 
 FGameplayEventData UFuEventDataUtility::MakeEventDataFromAvatars(const AActor* InstigatorAvatar, const AActor* TargetAvatar)
 {
 	FGameplayEventData EventData;
-
+/*
 	UAbilitySystemComponent* InstigatorAbilitySystem;
 	if (UFuAbilitySystemUtility::TryGetAbilitySystem(InstigatorAvatar, InstigatorAbilitySystem))
 	{
@@ -173,6 +173,6 @@ FGameplayEventData UFuEventDataUtility::MakeEventDataFromAvatars(const AActor* I
 	{
 		EventData.Target = TargetAvatar;
 	}
-
+*/
 	return EventData;
 }

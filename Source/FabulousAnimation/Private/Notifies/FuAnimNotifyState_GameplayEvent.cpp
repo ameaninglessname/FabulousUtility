@@ -59,7 +59,7 @@ void UFuAnimNotifyState_GameplayEvent::NotifyBegin(USkeletalMeshComponent* Mesh,
 	}
 
 	auto EventData{UFuEventDataUtility::MakeEventDataFromAbilitySystems(AbilitySystem, AbilitySystem)};
-	EventData.OptionalObject = Sequence;
+	//EventData.OptionalObject = Sequence;
 
 	if (FuGameplayEventStateAnimationNotify::IsPredictiveApplyEffectsByEventAllowed())
 	{
@@ -88,7 +88,7 @@ void UFuAnimNotifyState_GameplayEvent::NotifyEnd(USkeletalMeshComponent* Mesh, U
 	}
 
 	auto EventData{UFuEventDataUtility::MakeEventDataFromAbilitySystems(AbilitySystem, AbilitySystem)};
-	EventData.OptionalObject = Sequence;
+	// EventData.OptionalObject = Sequence;
 
 	if (FuGameplayEventStateAnimationNotify::IsPredictiveApplyEffectsByEventAllowed())
 	{

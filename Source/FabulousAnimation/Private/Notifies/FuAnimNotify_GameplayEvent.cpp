@@ -57,7 +57,7 @@ void UFuAnimNotify_GameplayEvent::Notify(USkeletalMeshComponent* Mesh, UAnimSequ
 	}
 
 	auto EventData{UFuEventDataUtility::MakeEventDataFromAbilitySystems(AbilitySystem, AbilitySystem)};
-	EventData.OptionalObject = Sequence;
+	// EventData.OptionalObject = Sequence;
 
 	if (FuGameplayEventAnimationNotify::IsPredictiveApplyEffectsByEventAllowed())
 	{
