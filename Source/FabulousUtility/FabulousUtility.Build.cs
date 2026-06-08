@@ -4,7 +4,7 @@ public class FabulousUtility : ModuleRules
 {
 	public FabulousUtility(ReadOnlyTargetRules target) : base(target)
 	{
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_8;
+		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 
 		// if (Target.bBuildEditor)
 		// {
